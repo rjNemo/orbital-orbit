@@ -1,7 +1,11 @@
 ---
+import BaseLayout from "./BaseLayout.astro"
 const { frontmatter } = Astro.props
 ---
-<h1>{frontmatter.title}</h1>
-<p>Published on: {frontmatter.pubDate.toString()}</p>
-<p>written by {frontmatter.author}</p>
-<slot/>
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>Written by: {frontmatter.author}</p>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} width="500"/>
+  <slot/>
+</BaseLayout>
