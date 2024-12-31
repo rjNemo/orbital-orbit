@@ -1,7 +1,8 @@
 ---
+layout: "../../layouts/BlogPostLayout.astro"
 title: My first blog post
 description: This is my first blog post
-date: 2024-12-30
+pubDate: 2024-12-30
 author: Ruidy
 image:
   url: "https://docs.astro.build/assets/rose.webp"
@@ -10,10 +11,6 @@ tags:
   - astro
   - blog
 ---
-
-# My First Blog Post
-
-Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey
 as I build a new website.
