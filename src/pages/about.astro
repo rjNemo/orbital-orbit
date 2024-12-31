@@ -1,8 +1,8 @@
 ---
-import "../styles/global.css"
-import BaseLayout from "../layouts/BaseLayout.astro"
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About Me"
+const pageTitle = "About Me";
 
 const identity = {
   firstName: "Ruidy",
@@ -10,7 +10,7 @@ const identity = {
   occupation: "Software Developer",
   location: "Germany",
   interests: ["Astro", "Web Development", "Learning in Public"],
-}
+};
 
 const skills = [
   "HTML",
@@ -21,12 +21,12 @@ const skills = [
   "Node.js",
   "Git",
   "Astro",
-]
+];
 
-const happy = true
-const finished = true
-const goal = 3
-const skillColor = "navy"
+const happy = true;
+const finished = true;
+const goal = 3;
+const skillColor = "navy";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -36,28 +36,32 @@ const skillColor = "navy"
 
   <h2>A few things about me:</h2>
   <ul>
-    <li> I'm {identity.firstName}. </li>
+    <li>I'm {identity.firstName}.</li>
     <li>I'm {identity.age} years old.</li>
 
     <li>I'm a {identity.occupation} in {identity.location}.</li>
     <li>I'm interested in {identity.interests.join(", ")}.</li>
   </ul>
 
-  <p> My skills are:</p>
+  <p>My skills are:</p>
   <ul>
-    {skills.map((skill) => (
-    <li class="skill">{skill}</li>
-    ))}
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
 
   {happy && <p>I am happy to be learning Astro!</p>}
 
   {finished && <p>I finished this tutorial!</p>}
 
-  {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
 </BaseLayout>
 
-<style define:vars={{skillColor }}>
+<style define:vars={{ skillColor }}>
   h1 {
     color: purple;
     font-size: 4rem;

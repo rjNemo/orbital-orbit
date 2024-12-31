@@ -1,18 +1,23 @@
 ---
-import "../styles/global.css"
-import BaseLayout from "../layouts/BaseLayout.astro"
-import BLogPost from "../components/BLogPost.astro"
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BLogPost from "../components/BLogPost.astro";
 
-const pageTitle = "Blog posts"
+const pageTitle = "Blog posts";
 
-const allPosts = Object.values(import.meta.glob("./posts/*.md",{eager:true}))
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+);
 ---
+
 <BaseLayout pageTitle={pageTitle}>
+  <p>This is a list of my blog posts.</p>
 
-<p>This is a list of my blog posts.</p>
-
-<ul>
-  {allPosts.map((post:any )=>  <BLogPost url={post.url} title={post.frontmatter.title}/>)}
-</ul>
-
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BLogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
 </BaseLayout>

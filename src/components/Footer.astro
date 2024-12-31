@@ -1,23 +1,27 @@
 ---
-import Social from "./Social.astro"
+import Social from "./Social.astro";
 
 const platforms = [
-{
-  platform: "GitHub",
-  username: "rjNemo",
-},{
-platform: "LinkedIn",
-username: "ruidy-nemausat",
-}
-]
-const url = `https://ruidy.nemausat.com`
+  {
+    platform: "GitHub",
+    username: "rjNemo",
+  },
+  {
+    platform: "LinkedIn",
+    username: "ruidy-nemausat",
+  },
+];
+const url = `https://ruidy.nemausat.com`;
 ---
+
 <footer>
-  <p>© 2023 Ruidy</p> 
-  {platforms.map(platform => (
-    <Social platform={platform.platform} username={platform.username}/>
-  ))}
- <a href={url}>website</a>
+  <p>© 2023 Ruidy</p>
+  {
+    platforms.map((platform) => (
+      <Social platform={platform.platform} username={platform.username} />
+    ))
+  }
+  <a href={url}>website</a>
 </footer>
 
 <style>
