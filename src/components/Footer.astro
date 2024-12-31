@@ -1,8 +1,29 @@
 ---
-const platform = "GitHub"
-const username = "rjNemo"
+import Social from "./Social.astro"
+
+const platforms = [
+{
+  platform: "GitHub",
+  username: "rjNemo",
+},{
+platform: "LinkedIn",
+username: "ruidy-nemausat",
+}
+]
 const url = `https://ruidy.nemausat.com`
 ---
 <footer>
-  <p>© 2023 Ruidy – Learn more about my projects on <a href={`https://github.com/${username}`}>{platform}</a> and my <a href={url}>website</a>.</p>
+  <p>© 2023 Ruidy</p> 
+  {platforms.map(platform => (
+    <Social platform={platform.platform} username={platform.username}/>
+  ))}
+ <a href={url}>website</a>
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
