@@ -1,13 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const tags = [
-  ...new Set(
-    Object.values(import.meta.glob("../posts/*.md", { eager: true })).flatMap(
-      (post: any) => post.frontmatter.tags,
-    ),
-  ),
-];
+const posts = await getCollection("blog");
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
 ---
 
 <BaseLayout pageTitle="Tags">
