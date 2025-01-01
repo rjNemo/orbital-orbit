@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/rss": "^4.0.10",
+    "@astrojs/vue": "^5.0.3",
     "astro": "^5.1.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "prettier": "^3.4.2",
